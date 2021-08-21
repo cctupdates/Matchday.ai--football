@@ -1,15 +1,17 @@
-import React from 'react'
-import {Button} from './style'
+// import React from "react";
+// import { useLocalContext } from "../../../Context.js/Context";
+// import { Button } from "./style";
 
-const CustomButton = (props) => {
+// const CustomButton = (props, { idA, idB, idC }) => {
+//   const { setBtnsA, setBtnsB, setBtnsC } = useLocalContext();
 
-    return (
-        <>
-        <Button type={props.type}>
-            {props.text}
-        </Button>
-        </>
-    )
-}
+//   return (
+//     <>
+//       <Button type={props.type} onClick={() => }>
+//         {props.text}
+//       </Button>
+//     </>
+//   );
+// };
 
-export default CustomButton
+// export default CustomButton;
