@@ -5,7 +5,7 @@ const Context = createContext();
 export function useLocalContext() {
   return useContext(Context);
 }
-
+//aman branch
 export function ContextProvider({ children }) {
   const [scale, setScale] = useState(10);
 
