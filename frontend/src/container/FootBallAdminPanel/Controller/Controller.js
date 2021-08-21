@@ -1,58 +1,74 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useLocalContext } from "../../../Context.js/Context";
 import { Wrapper, SliderStyle } from "./style";
 
-// let marks = [];
-
-const marks = [
-  {
-    value: 0,
-    label: "0sec",
-  },
-  {
-    value: 10,
-  },
-  {
-    value: 20,
-  },
-  {
-    value: 30,
-  },
-  {
-    value: 40,
-  },
-  {
-    value: 50,
-    label: "5sec",
-  },
-  {
-    value: 60,
-  },
-  {
-    value: 70,
-  },
-  {
-    value: 80,
-  },
-  {
-    value: 90,
-  },
-  {
-    value: 100,
-    label: "10sec",
-  },
-];
+// let marks = [
+//   {
+//     value: 0,
+//     label: "0sec",
+//   },
+//   {
+//     value: 1,
+//   },
+//   {
+//     value: 2,
+//   },
+//   {
+//     value: 3,
+//   },
+//   {
+//     value: 4,
+//   },
+//   {
+//     value: 5,
+//     label: "5sec",
+//   },
+//   {
+//     value: 6,
+//   },
+//   {
+//     value: 7,
+//   },
+//   {
+//     value: 8,
+//   },
+//   {
+//     value: 9,
+//   },
+//   {
+//     value: 10,
+//     label: "10sec",
+//   },
+// ];
 
 const Controller = () => {
   const { scale } = useLocalContext();
   console.log("Controller", scale);
 
+  // const handleSlider = () => {
+  //   marks = [];
+  //   if (marks.length > scale + 1) {
+  //     return ;
+  //   } else {
+  //     for (let i = 0; i <= scale; i++) {
+  //       marks.push({ value: i, label: `${i}sec` });
+  //     }
+  //     console.log(marks);
+  //     return marks;
+  //   }
+  // };
+
+  // useEffect(() => {
+  //     handleSlider();
+  // }, [scale])
+
   return (
     <Wrapper>
       <SliderStyle
         max={scale}
+        // onClick={handleSlider}
         step={1}
-        marks={marks}
+        marks={true}
         valueLabelDisplay="on"
       />
     </Wrapper>

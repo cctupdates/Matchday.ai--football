@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { VideoContainer } from "./style";
 import ReactPlayer from "react-player";
+import { useLocalContext } from "../../../Context.js/Context";
 import axiosInstance from "../../../helpers/axios";
 
 const Video = () => {
@@ -10,19 +11,28 @@ const Video = () => {
   const [play, setPlay] = useState(true);
   const [draw, setDraw] = useState(true);
   const [timeduration, setTimeDuration] = useState(null);
-  const [seconds, setSeconds] = useState(null);
-  const [coorX, setCoorX] = useState(0);
-  const [coorY, setCoorY] = useState(0);
+
+  const {
+    seconds,
+    setSeconds,
+    coorX,
+    setCoorX,
+    coorY,
+    setCoorY,
+    btnsA,
+    btnsB,
+    btnsC,
+  } = useLocalContext();
 
   const postData = {
     videoUrl: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
     timestamps: "" + seconds,
-    coorX:"" + coorX,
-    coorY:"" + coorY,
+    coorX: "" + coorX,
+    coorY: "" + coorY,
   };
 
   const sendData = () => {
-    axiosInstance.post("/api/v-timestamp",postData)
+    axiosInstance.post("/api/v-timestamp", postData);
     console.log("DDDAAATTAA", postData);
   };
 
@@ -105,6 +115,12 @@ const Video = () => {
 
   console.log("Duration", timeduration);
   console.log("Seconds", seconds);
+
+  // useEffect(() => {
+    console.log("bA", btnsA);
+    console.log("bB", btnsB);
+    console.log("bC", btnsC);
+  // }, [btnsA, btnsB, btnsC]);
 
   //handling play and pause on S key
   const handleS = (event) => {

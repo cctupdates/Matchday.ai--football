@@ -12,33 +12,34 @@ import {
 } from "./style";
 
 import DropDown from "../../../components/DropDown/DropDown";
-import CustomButton from "../CustomButton/CustomButton";
+import { Button } from "../CustomButton/style";
+import { useLocalContext } from "../../../Context.js/Context";
 
 const CenterDiv = (props) => {
-  const ButtonsArray2 = [
-    { id:"1",text: "Loremip" },
-    { id:"2",text: "Loremip" },
-    { id:"3",text: "Loremip" },
-    { id:"4",text: "Loremip" },
-    { id:"5",text: "Loremip" },
-    { id:"6",text: "Loremip" },
-    { id:"7",text: "Loremip" },
-    { id:"8",text: "Loremip" },
-    { id:"9",text: "Loremip" },
-    { id:"10",text: "Loremip" },
-    { id:"11",text: "Loremip" },
-    { id:"12",text: "Loremip" },
-    { id:"13",text: "Loremip" },
-    { id:"14",text: "Loremip" },
-    { id:"15",text: "Loremip" },
+  const ButtonsArrayB = [
+    { id:"b1",text: "Loremip" },
+    { id:"b2",text: "Loremip" },
+    { id:"b3",text: "Loremip" },
+    { id:"b4",text: "Loremip" },
+    { id:"b5",text: "Loremip" },
+    { id:"b6",text: "Loremip" },
+    { id:"b7",text: "Loremip" },
+    { id:"b8",text: "Loremip" },
+    { id:"b9",text: "Loremip" },
+    { id:"b10",text: "Loremip" },
+    { id:"b11",text: "Loremip" },
+    { id:"b12",text: "Loremip" },
+    { id:"b13",text: "Loremip" },
+    { id:"b14",text: "Loremip" },
+    { id:"b15",text: "Loremip" },
   ];
-  const ButtonsArray3 = [
-    { id:"1",text: "Loremip" },
-    { id:"2",text: "Loremip" },
-    { id:"3",text: "Loremip" },
-    { id:"4",text: "Loremip" },
-    { id:"5",text: "Loremip" },
-    { id:"6",text: "Loremip" },
+  const ButtonsArrayC = [
+    { id:"c1",text: "Loremip" },
+    { id:"c2",text: "Loremip" },
+    { id:"c3",text: "Loremip" },
+    { id:"c4",text: "Loremip" },
+    { id:"c5",text: "Loremip" },
+    { id:"c6",text: "Loremip" },
   ];
 
   const DropDownOptions = [
@@ -48,21 +49,23 @@ const CenterDiv = (props) => {
     { option: "40" },
   ];
 
+  const { setBtnsB, setBtnsC } = useLocalContext();
+
   return (
     <MiddleDiv>
       <ButtonContainer>
         <ButtonsDiv2>
           {React.Children.toArray(
-            ButtonsArray2?.map((item) => {
-              return <CustomButton type="secondary" id={item.id} text={item.text} />;
+            ButtonsArrayB?.map((item) => {
+              return <Button onClick={() => setBtnsB(item.id)} type="secondary">{item.text}</Button>
             })
           )}
         </ButtonsDiv2>
         <Divider></Divider>
         <ButtonsDiv3>
           {React.Children.toArray(
-            ButtonsArray3?.map((item) => {
-              return <CustomButton type="secondary" id={item.id} text={item.text} />;
+            ButtonsArrayC?.map((item) => {
+                return <Button onClick={() => setBtnsC(item.id)} type="secondary">{item.text}</Button>
             })
           )}
         </ButtonsDiv3>
